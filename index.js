@@ -1,5 +1,7 @@
+const morgan = require("morgan");
 const express = require("express");
 const app = express();
+app.use(morgan("combined"));
 
 app.get("/users/:name", (req, res) => {
    res.send({ auth: `Mr. ${req.params["name"]}` });
